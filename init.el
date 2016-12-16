@@ -20,12 +20,8 @@
 (global-unset-key (kbd "C-z"))
 ;; "yes/no" === "y/n"
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; 하이라이트 커서 라인
-;; (global-hl-line-mode t)
-
 ;; 백업파일 제거
-;; (setq make-backup-files nil)
+(setq make-backup-files nil)
 
 ;; Function name at point in mode line
 (which-function-mode t)
