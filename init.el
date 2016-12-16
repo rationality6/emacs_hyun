@@ -1,35 +1,36 @@
-;; Don't show menu bar
+;; 한글 세팅
+(set-language-environment "Korean")
+(prefer-coding-system 'utf-8)
+;; S-spacebar 에 단축키 배정
+(global-set-key (kbd "<S-kana>") 'toggle-input-method)
+;; 메뉴바 삭제
 (menu-bar-mode -1)
-
-;; Don't show tool bar
+;; 툴바 삭제
 (tool-bar-mode 0)
-
-;; Don't show scroll bar
+;; 스크롤바 삭제
 (toggle-scroll-bar -1)
-
-;; disable all the C-z
-(global-unset-key (kbd "C-z"))
-
-;; Don't load the startup screen
+;; 초기화면 Load 하지말기
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
-
-;; Highlight matching paren
+;; 하이라이트 matching paren
 (show-paren-mode 1)
+;; 자동 브라켓 닫아주기
+(electric-pair-mode t)
+;; 프리즈 기능 제거 C-z
+(global-unset-key (kbd "C-z"))
+;; "yes/no" === "y/n"
+(fset 'yes-or-no-p 'y-or-n-p)
 
-;; Highlight current line
+;; 하이라이트 커서 라인
 ;; (global-hl-line-mode t)
 
-;; no-save file
-(setq make-backup-files nil)
+;; 백업파일 제거
+;; (setq make-backup-files nil)
 
 ;; Function name at point in mode line
 (which-function-mode t)
-
 ;; Highlight selection between point and mark
 (transient-mark-mode t)
-;; Automatically close opening characters
-(electric-pair-mode t)
 ;; Syntax highlighting
 (global-font-lock-mode t)
 ;; Move by camelCase words
@@ -38,8 +39,10 @@
 (setq initial-scratch-message nil)
 ;; Show line-number
 (line-number-mode 1)
-;; "yes/no" === "y/n"
-(fset 'yes-or-no-p 'y-or-n-p)
+
+;; 왜 작동을 안하니
+;; Auto-start on any markup modes
+;; (add-hook 'sgml-mode-hook 'emmet-mode)
 
 ;; Compile When Init.el Modified
 (defun autocompile nil
