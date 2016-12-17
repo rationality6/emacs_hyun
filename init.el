@@ -22,6 +22,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; 백업파일 제거
 (setq make-backup-files nil)
+;; 오토세이브 제거
+(setq auto-save-default nil)
 
 ;; Function name at point in mode line
 (which-function-mode t)
@@ -282,10 +284,6 @@
 
 ;; rvm
 (rvm-use-default)
-
-;; SuperCollider
-;; (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/SuperCollider")
-;; (require 'sclang)
 
 ;; Tidal
 ;; (add-to-list 'load-path "~/tidal")
